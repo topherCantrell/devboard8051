@@ -4,3 +4,5 @@ ATMEL 8051 Development Board with LCD &amp; DS1307 Clock
 https://insignialabs.com/atmel-8051-development-board-with-lcd-ds1307-clock-1806427
 
 http://ee.sharif.edu/~sakhtar3/books/mazidi/
+
+https://learn.adafruit.com/character-lcds/wiring-a-character-lcd
