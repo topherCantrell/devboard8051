@@ -28,6 +28,9 @@ https://noobieelectronic.blogspot.com/2017/10/how-to-install-usbasp-drivers-on-p
 
 For Windows10, I had to disable the "only install signed drivers" feature of windows.
 
+I am using a 9V wall wart supply to power the board. My ISP will not plug directly into the board, so I
+used jumper wires to connect it.
+
 I used the PROGSIP application that Insignia Labs sent me. I hand assembled the following code and confirmed that I
 could blink one of the board's LEDs.
 
