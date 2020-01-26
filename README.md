@@ -21,8 +21,9 @@ https://www.amazon.com/gp/product/B07NZ59VK2<br>
 # January 26, 2020
 
 ```
-0000: 85 90 A0    MOV P1,P2
-0003: 02 00 00    LJMP $0000
+0000: 75 A0 FF    MOV P2,$FF  ; Allow inputs
+0003: 85 90 A0    MOV P1,P2   ; Inputs from P2 to outputs in P1
+0006: 02 00 00    LJMP $0000  ; Continuous echo
 ```
 
 # January 23, 2020
