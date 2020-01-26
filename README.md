@@ -18,6 +18,13 @@ https://www.amazon.com/gp/product/B07NZ59VK2<br>
 
 [8051 opcodes](http://www.keil.com/support/man/docs/is51/is51_opcodes.htm)
 
+# January 26, 2020
+
+```
+0000: 85 90 A0    MOV P1,P2
+0003: 02 00 00    LJMP $0000
+```
+
 # January 23, 2020
 
 ![](art/hookup.jpg)
@@ -36,7 +43,7 @@ could blink one of the board's LEDs.
 
 ```
 0000: 75 90 FF    MOV    P1,#$FF  ; All 1s to P1
-0002: 02 00 00    LJMP   $0000    ; Infinite loop
+0003: 02 00 00    LJMP   $0000    ; Infinite loop
 ```
 
 It would be a fun exercise to make a serial ISP programmer from a propeller mini that could use a standard USB-serial dongle. No special drivers required
