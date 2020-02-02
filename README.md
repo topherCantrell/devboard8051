@@ -1,4 +1,4 @@
-# ATMEL 8051 Development Board with LCD and DS1307 Clock
+# ATMEL 8051 Development Board with JHD162A LCD and DS1307 Clock
 
 https://www.amazon.com/gp/product/B07KKHPFDV<br>
 ![](art/board.jpg)
@@ -20,7 +20,15 @@ https://www.amazon.com/gp/product/B07NZ59VK2<br>
 
 [Fantastic Companion Book](https://www.amazon.com/gp/product/129202657X)
 
-# January 26, 2020
+# Journal
+
+## February 2, 2020
+
+I got my "The 8051 Microcontroller and Embedded Systems" book in the mail. What a trip down memory lane. The book
+is high quality with lots of diagrams and code. It is even in larger print! It is a text book, and a tad pricy. But
+I am glad I bought it.
+
+## January 26, 2020
 
 ```
 0000: 75 A0 FF    MOV P2,$FF  ; Allow inputs
@@ -28,7 +36,7 @@ https://www.amazon.com/gp/product/B07NZ59VK2<br>
 0006: 02 00 00    LJMP $0000  ; Continuous echo
 ```
 
-# January 23, 2020
+## January 23, 2020
 
 ![](art/hookup.jpg)
 
