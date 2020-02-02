@@ -18,6 +18,8 @@ https://www.amazon.com/gp/product/B07NZ59VK2<br>
 
 [8051 opcodes](http://www.keil.com/support/man/docs/is51/is51_opcodes.htm)
 
+[Fantastic Companion Book](https://www.amazon.com/gp/product/129202657X)
+
 # January 26, 2020
 
 ```
