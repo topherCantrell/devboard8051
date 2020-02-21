@@ -30,6 +30,8 @@ http://www.circuitstoday.com/interfacing-16x2-lcd-with-8051
 
 ![](art/lcd.jpg)
 
+One I realized that THE CONTRAST WAS TURNED ALL THE WAY DOWN then I was able to make the code work. See lcd.asm.
+
 ## February 17, 2020
 
 https://github.com/arduino-libraries/LiquidCrystal/blob/master/src/LiquidCrystal.cpp
