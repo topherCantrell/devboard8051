@@ -60,44 +60,36 @@ HERE:
     DJNZ   R3,HERE
     RET
 
-Wait:
-    CLR    E_pin
-    CLR    RS_pin
-    SETB   RW_pin
-    MOV    P1,#0xFF
-    SETB   E_pin
-    MOV    A,P1
-    JB     ACC_7,Wait
-    CLR    E_pin
-    CLR    RW_pin
+WaitOnBF:
+    MOV    P1,#0xFF       ; Port in read mode
+    SETB   RW_pin         ; 1=Read
+    CLR    RS_pin         ; 0=Command
+WBF1:
+    CLR    E_pin          ; We loop back here for another cycle with E_pin high
+    SETB   E_pin          ; Raise the enable
+    NOP                   ; Give LCD time to output data TODO:
+    MOV    A,P1           ; Read the data
+    JB     ACC_7,WBF1     ; If the Busy Flag is set, keep checking
+    CLR    E_pin          ; Turn the enable off
+    CLR    RW_pin         ; Back to write mode
     RET
 
-SendCommand:
-    ; Write data
-    ; Clear RS and set RW
-    ; Set E
-    ; Pause
-    ; Clear E
-    MOV    data_port,A
-    CLR    RS_pin
-    CLR    RW_pin
-    SETB   E_pin
-    CLR    E_pin
+SendCommand:    
+    MOV    data_port,A    ; Data to the bus
+    CLR    RS_pin         ; 0=Command
+    CLR    RW_pin         ; 0=Write
+    SETB   E_pin          ; High ...
+    CLR    E_pin          ; ... to low transition
     ;ACALL  DELAY
-    ACALL  Wait
+    ACALL  Wait           ; Wait on Busy Flag to clear
     RET
 
-SendData:
-    ; Write data
-    ; Set RS and set RW
-    ; Set E
-    ; Pause
-    ; Clear E
-    MOV    data_port,A
-    SETB   RS_pin
-    CLR    RW_pin
-    SETB   E_pin
-    CLR    E_pin
+SendData:    
+    MOV    data_port,A    ; Data to the bus
+    SETB   RS_pin         ; 1=Data
+    CLR    RW_pin         ; 0=Write
+    SETB   E_pin          ; High ...
+    CLR    E_pin          ; ... to low transition
     ;ACALL  DELAY
-    ACALL  Wait
+    ACALL  Wait           ; Wait on Busy Flag to clear
     RET
