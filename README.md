@@ -20,7 +20,35 @@ https://www.amazon.com/gp/product/B07NZ59VK2<br>
 
 [Fantastic Companion Book](https://www.amazon.com/gp/product/129202657X)
 
+[8051 Example](http://www.circuitstoday.com/interfacing-16x2-lcd-with-8051)
+
 # Journal
+
+## February 20, 2020
+
+http://www.circuitstoday.com/interfacing-16x2-lcd-with-8051
+
+![](art/lcd.jpg)
+
+## February 17, 2020
+
+https://github.com/arduino-libraries/LiquidCrystal/blob/master/src/LiquidCrystal.cpp
+
+
+## February 15, 2020
+
+I moved my assemblers/disassemblers to a pip project:
+
+```
+pip install opcodetools
+
+python -m opcodetools.asm lcd.asm
+```
+
+I am using my own ISP now:
+
+[https://github.com/topherCantrell/pi-isp](https://github.com/topherCantrell/pi-isp)
+
 
 ## February 2, 2020
 
