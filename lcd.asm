@@ -29,22 +29,34 @@ START:
     MOV    A,#0x38      ; 2 lines and 5x7 matrix
     ACALL  SendCommand
 
+    ACALL  DELAY
+
     MOV    A,#0x0F      ; LCD ON, cursor ON, cursor blinking ON
     ACALL  SendCommand
+
+    ACALL  DELAY
 
     MOV    A,#0x01      ; Clear screen
     ACALL  SendCommand
 
+    ACALL  DELAY
+
     MOV    A,#0x06      ; Increment cursor
     ACALL  SendCommand
+
+    ACALL  DELAY
 
     MOV    A,#0x82      ; Cursor line one, position 2
     ACALL  SendCommand
 
+    ACALL  DELAY
+
     MOV    A,#0x3C      ; Activate second line
     ACALL  SendCommand
 
-    MOV    A,#49
+    ACALL  DELAY
+
+    MOV    A,#78
     ACALL  SendData
 
 DONE:
@@ -52,12 +64,10 @@ DONE:
 
 DELAY:
     MOV    R4,#0
-    MOV    R3,#0
 HERE:
     NOP
     NOP
     DJNZ   R4,HERE
-    DJNZ   R3,HERE
     RET
 
 WaitOnBF:
@@ -80,8 +90,7 @@ SendCommand:
     CLR    RW_pin         ; 0=Write
     SETB   E_pin          ; High ...
     CLR    E_pin          ; ... to low transition
-    ;ACALL  DELAY
-    ACALL  Wait           ; Wait on Busy Flag to clear
+    ACALL  WaitOnBF       ; Wait on Busy Flag to clear
     RET
 
 SendData:    
@@ -90,6 +99,5 @@ SendData:
     CLR    RW_pin         ; 0=Write
     SETB   E_pin          ; High ...
     CLR    E_pin          ; ... to low transition
-    ;ACALL  DELAY
-    ACALL  Wait           ; Wait on Busy Flag to clear
+    ACALL  WaitOnBF       ; Wait on Busy Flag to clear
     RET
