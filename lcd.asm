@@ -1,7 +1,7 @@
 
-._CPU = 8052
+.CPU  8052
 
-.include 8052_SFR.asm
+.include 8051_SFR.asm
 
 ; http://www.circuitstoday.com/interfacing-16x2-lcd-with-8051
 

@@ -1,4 +1,5 @@
-._CPU = 8051
+
+.CPU 8052
 
 .include 8051_SFR.asm
 
